@@ -20,17 +20,17 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column ="0" Text="Your date of birth:" Margin="5" ></TextBlock>
-        <DatePicker x:Name="TbDate" Grid.Row="0" Grid.Column ="1" Margin="5"></DatePicker>
-        <Button x:Name="Calculate" Grid.Row="1" Grid.ColumnSpan = "2"  Content = "Get Results!" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Height="30"></Button>
+        <DatePicker x:Name="TbDate" SelectedDate="{Binding InputDate, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column ="1" Margin="5"></DatePicker>
+        <Button x:Name="Calculate" Grid.Row="1" Grid.ColumnSpan = "2"  Content = "Get Results!" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Height="30" Command="{Binding OutputOfAgeCommand}"></Button>
         <TextBlock Grid.Row="2" Grid.Column ="0"  Text="Your age:" Margin="5" ></TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column ="1" x:Name="TbAge" Margin="5" ></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column ="1" x:Name="TbAge"  Text="{Binding AgeOfUser, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" ></TextBlock>
        
         <TextBlock Grid.Row="3" Grid.Column ="0"  Text="Your Western Zodiac Sign:" Margin="5" ></TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column ="1" x:Name="TbWestern" Margin="5" ></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column ="1" x:Name="TbWestern" Text="{Binding WesternZodiacSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" ></TextBlock>
 
         <TextBlock Grid.Row="4" Grid.Column ="0"  Text="Your Chinese Zodiac Sign:" Margin="5" ></TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column ="1" x:Name="TbChinese" Margin="5" ></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column ="1" x:Name="TbChinese" Text="{Binding ChineseZodiacSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"  Margin="5" ></TextBlock>
 
-        <Button x:Name="Cancel" Grid.Row="5" Grid.ColumnSpan = "2"  Content = "Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Height="30"></Button>
+        <Button x:Name="Cancel" Grid.Row="5" Grid.ColumnSpan = "2"  Content = "Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Height="30" Command= "{Binding CancelCommand}"></Button>
     </Grid>
 </UserControl>

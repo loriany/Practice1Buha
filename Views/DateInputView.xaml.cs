@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practice1Buha.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace Practice1Buha.Views
     /// </summary>
     public partial class DateInputView : UserControl
     {
+
+        private DateInputViewModel _dateInputViewModel;
         public DateInputView()
         {
             InitializeComponent();
+            DataContext = _dateInputViewModel = new DateInputViewModel();
         }
     }
 }
